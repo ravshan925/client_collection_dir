@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  newman:
+    image: postman/newman:alpine
+    volumes:
+      - ./:/etc/newman
+    command: ["run", "client_collection.json", "-e", "env_client_collection.json"]
